@@ -1,0 +1,33 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minify-html": "html-minifier-terser src/index.html --collapse-whitespace --output=dist/index.html ",
+    "optimize-css": "postcss src/css/main.css --use autoprefixer cssnano --output dist/css/main.css --no-map",
+    "transpile-js": "babel src/js --out-dir dist/js --presets=@babel/preset-env",
+    "minify-js": "uglifyjs src/js/*.js -o dist/js/bundle.js",
+    "compile-less": "lessc src/less/main.less src/css/main.css",
+    "minify-images": "imagemin src/images/**/* --out-dir=dist/images",
+    "dev": "onchange 'src/less/**/*.less' -- npm run compile-less",
+    "build": "npm run minify-html && npm run optimize-css && npm run transpile-js && npm run minify-js && npm run minify-images"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "html-minifier-terser": "^7.2.0",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
+    "less": "^4.2.0",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "uglify-js": "^3.17.4"
+  }
+}

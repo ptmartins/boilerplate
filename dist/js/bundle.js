@@ -1,0 +1,1 @@
+alert("Hello foo.js");const c=()=>{console.log("C")};alert("Hello main.js");const a=()=>{console.log("A")};const b=()=>{console.log("B")};
